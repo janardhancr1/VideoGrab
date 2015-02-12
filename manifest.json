@@ -1,0 +1,51 @@
+{
+  "manifest_version": 2,
+  "name": "VideoGrab",
+  "short_name": "VideoGrab",
+  "description": "",
+  "version": "0.0.1",
+  "minimum_chrome_version": "38",
+
+  "icons": {
+    "128": "assets/icon-large.png",
+    "16": "assets/icon-bitty.png",
+    "48": "assets/icon-small.png"
+  },
+
+  "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "styles/main.css" ],
+      "js": [  "scripts/config/config.js",
+                "scripts/lib/jsonToDOM.js",
+                "scripts/lib/fermata.js",
+                "scripts/helpers/utilities.js",
+                "scripts/widgets/loadUI.js",
+                "scripts/preload.js"],
+      "matches": [ "*://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "oauth2": {
+      "client_id": "872339729949-137jrria0afggt1oevr0ofi5ub7pkn88.apps.googleusercontent.com",
+	    //"client_id": "1072936636632-73q1pt0lrdn5f0iqtfeljv1ffbean8r6.apps.googleusercontent.com",
+      "scopes": [ "https://www.googleapis.com/auth/youtubepartner",
+                  "https://www.googleapis.com/auth/youtube",
+                  "https://www.googleapis.com/auth/youtube.upload",
+                  "https://www.googleapis.com/auth/userinfo.email" ]
+   },
+   "permissions": [ "identity", "tabs", "storage",
+                    "https://accounts.google.com/o/oauth2/revoke",
+                    "http://www.youtube.com/*",
+                    "https://www.youtube.com/*",
+                    "https://gdata.youtube.com/*",
+                    "https://www.googleapis.com/auth/youtubepartner",
+                    "https://www.googleapis.com/auth/youtube",
+                    "https://www.googleapis.com/auth/youtube.upload",
+                    "https://www.googleapis.com/auth/plus.me",
+                    "http://www.videobar.tm/*",
+                    "http://local.mya.tm/*" ],
+   "background": {
+      "page": "background.html",
+      "presistent": "false"
+   },
+   "content_security_policy": "script-src 'self' https://apis.google.com/ https://ajax.googleapis.com; object-src 'self'"
+}

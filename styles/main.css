@@ -1,0 +1,750 @@
+body .sb-card-arrow, body .sb-card-body-arrow{
+	right: 110px;
+}
+#theorem_power{
+	text-align: left;
+	float: left;
+	vertical-align: middle;
+}
+#theorem_power a{
+	font-weight: bold;
+	color: rgb(51, 51, 51);
+}
+#theorem_comments{
+	position : absolute;
+	left : 190px;
+}
+#theorem_theostat_logo{
+	vertical-align: middle;
+	margin-right: 4px;
+	position: relative;
+	top: -2px;
+	width: 16px;
+}
+.theorem_red{
+	color : #CC181E !important;
+	font-weight : bold;
+}
+.theorem_black{
+	color : rgb(51, 51, 51);
+	font-weight : bold;
+}
+.theorem_fright{
+	float: right;
+	width: 122px;
+}
+.theorem_blue{
+	color : #2793E6;
+	font-weight : bold;
+}
+#theorem_favorites_button{
+	color: rgb(102, 102, 102);
+	cursor: pointer;
+	display: block;
+	font-family: arial, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: bold;
+	height: auto;
+	line-height: 21px;
+	text-transform: uppercase;
+	white-space: normal;
+	width: auto;
+	border : 0;
+}
+#theorem_favorites_button:hover{
+	text-decoration : underline;
+}
+#theorem_popup{
+	margin-top: 16px;
+	display : none;
+	position : absolute;
+	width : 340px;
+	background : #FFF;
+	border: 1px solid #BABABA;
+	box-shadow : 7px 0px 15px #999;
+	padding : 15px 20px;
+	z-index: 9999999999;
+}
+.moved{
+	position: fixed !important;
+	top: 250px;
+}
+#theorem_search_div{
+	border-bottom : 1px solid #D9D9D9;
+	padding: 10px 0;
+	color: #333;
+}
+#theorem_sections_div{
+	padding: 10px 0;
+	text-align: center;
+}
+#theorem_sections_div button{
+	color: #999999;
+	font-weight: bold;
+	cursor : pointer;
+	padding: 0 3px;
+}
+#theorem_search_div button{
+	color: #999999;
+	font-weight: bold;
+	cursor : pointer;
+	padding: 0 3px;
+}
+#theorem_sections_div button.selected{
+	color: #333;
+}
+#theorem_comments_div{
+	overflow: auto;
+	max-height: 380px;
+	margin-bottom: 30px;
+}
+.theorem_poster_span, .theorem_name_span{
+	width : 200px;
+	cursor: pointer;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+#theorem_social_stats_container{
+	white-space: nowrap;
+}
+.theorem_comment table{
+	margin-top: 10px;
+	width : 100%;
+	max-width : 100%;
+}
+.theorem_comment table td:first-child{
+	text-align: center;
+	width : 35px;
+}
+.theorem_comment table td{
+	padding-bottom: 3px;
+}
+.theorem_comment table td img{
+	cursor: pointer;
+}
+.theorem_comment_span{
+	color: #333;
+	cursor: pointer;
+}
+.theorem_name_span{
+	color: #2793e6;
+	cursor: pointer;
+}
+#theorem_close_button{
+	float: right;
+	width: 10px;
+	height: 10px;
+	cursor: pointer;
+	margin-left: 16px;
+}
+#theorem_mv_right_button{
+	float: right;
+	cursor: pointer;
+}
+#theorem_comments_by{
+	margin-top: 4px;
+	float: left;
+}
+.theorem_qmark{
+	font-weight: bold;
+	cursor: pointer;
+}
+#theorem_show_more{
+	width: 95%;
+	border: 1px solid #d9d9d9;
+	margin: 6px 0;
+	padding: 5px 0;
+	background: #FAFAFA;
+	cursor: pointer;
+	font-weight: bold;
+	color: rgb(51, 51, 51);
+}
+#theorem_status_div{
+	width: 100%;
+	background: #E0E0E0;
+	position: absolute;
+	left: -1px;
+	line-height: 30px;
+	bottom: 0px;
+	height: 30px;
+	border: 1px solid #BABABA;
+	border-top: 0;
+	text-indent: 15px;
+}
+#theorem_refresh_img{
+	cursor: pointer;
+	margin-right: 6px;
+}
+
+
+
+.tagger-ext{
+	display : inline-block;
+	width: 100%;
+	padding: 2px;
+	border: 1px solid #D9D9D9;
+	cursor: text;
+	margin: 2px 0px 5px;
+}
+.tagger-item{
+	background: transparent;
+	border: 1px solid #D9D9D9;
+	border-radius : 3px;
+	padding: 1px 3px;
+	margin-right: 5px;
+	margin-bottom: 2px;
+	display: inline-block;
+}
+.tagger-x{
+	margin: 0px 3px;
+	width: 7px;
+	height: 7px;
+	color: #AAA;
+	cursor: pointer;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowNkVFN0I4ODA2MkRFNDExOTE2QUM3QjJGODc2RkQyNiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDMjNENURFODNBNkMxMUU0QTMxMzhFNjFEQTM4QTNEMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDMjNENURFNzNBNkMxMUU0QTMxMzhFNjFEQTM4QTNEMyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkY0NjNBRTU1NjMzQUU0MTFBRDU4ODZGMDIwMDI2RjJFIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjA2RUU3Qjg4MDYyREU0MTE5MTZBQzdCMkY4NzZGRDI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+B66RnwAAAI1JREFUeNocTb0KwyAY/CpS7CLN1HcKEckjCL6VUzaDGYK7L9OtoBCzJSJfY26547ifxzRN31orV0q94YK1dksp7ZRz/pnn+dl1HTLGYF1XGIbhBYgIIQQcxxGFEOi9x+aRVj/PsxEQQqCUcmvqnDuWZQGtNbQpYwzknA96JX5SSt73/X1+mVuMcf8LMAB1iUNUhlkt2QAAAABJRU5ErkJggg==');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% auto;
+	display: inline-block;
+	vertical-align: middle;
+}
+.tagger-ext input{
+
+	border: none;
+	outline: none;
+}
+
+.muted{
+	color: #828384 !important;
+	font-size: 11px;
+}
+
+#theorem_question_mark{
+	cursor: pointer;
+}
+
+
+#theorem_theostat_button{
+	margin: 0px 19px -8px -4px;
+	width: 23px;
+	height: 23px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#theostat_settings_span.no_user #theorem_theostat_button{
+	margin-left: 4px;
+}
+
+.theorem_tag_li {
+	display: inline-block;
+	margin: 2px 3px;
+	background: transparent;
+	padding: 2px 7px;
+	border-radius: 3px;
+	border: 1px solid rgb(217, 217, 217);
+}
+
+#theorem_monetization{
+	margin-right: 16px;
+	display: inline-block;
+	line-height: 15px;
+}
+#theorem_monetization a{
+	font-weight: bold;
+}
+
+.hidden_comma{
+	color: #FFF;
+	font-size: 1px;
+}
+
+#theorem_copy_button{
+	border: 1px solid #d3d3d3;
+	background: #f8f8f8;
+	border-radius: 2px;
+	padding: 3px 10px;
+	color: #777777;
+	display: inline-block;
+	margin-left: 10px;
+	margin-top: -13px;
+	cursor: pointer;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 5px 10px 7px 10px;
+}
+
+#theorem_copy_button img {
+	margin-right: 5px;
+	margin-bottom: -3px;
+}
+
+#theorem_copy_button:hover, #theorem_copy_button:focus, #theorem_copy_button:active{
+	color: #222;
+	border: 1px solid #222;
+
+}
+
+#theorem_tags_header{
+	float: left;
+}
+
+#theorem_spd_vpd_div{
+	color: #777777;
+	font-size: 12px !important;
+	display: inline-block;
+}
+
+h1 + #theorem_spd_vpd_div{
+	line-height: 24px;
+}
+
+#theorem_spd_vpd_div.channel_page{
+	font-size: 12px;
+	margin-top: 6px;
+}
+#theorem_spd_vpd_div b{
+	margin-left: 16px;
+}
+#watch7-subscription-container{
+	float: left;
+}
+
+
+#theorem_settings_div{
+	z-index: 1999999998;
+	position: absolute;
+	margin-top: 13px;
+	padding-bottom: 8px;
+	background-color: #FFF;
+	right: 11px;
+	width: auto;
+	white-space: nowrap;
+	border: 1px solid rgb(197, 197, 197);
+    box-shadow: rgba(0, 0, 0, 0.180392) 0px 0px 15px 0px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.180392) 0px 0px 15px 0px;
+}
+
+#theorem_settings_header:before{
+    content:"\A";
+    border-style: solid;
+    border-width: 0px 13px 13px 13px;
+    border-color: transparent transparent #cb3737 transparent;
+    position: absolute;
+    right: 6px;
+    top: -12px;
+}
+
+#theorem_settings_header{
+	position: relative;
+	background-color: #cb3737;
+	color: #FFF;
+	margin-bottom: 6px;
+	font-weight: bold;
+	font-size: 11px;
+	padding: 7px 15px;
+}
+
+#theorem_settings_body{
+	margin-right: 16px;
+	padding: 0 10px;
+}
+
+#theorem_settings_body thead{
+	text-align: left;
+}
+
+#theorem_settings_body td{
+	padding: 0 10px;
+	vertical-align: top;
+}
+
+#theorem_settings_body th {
+	padding-bottom: 10px;
+	padding-top: 4px;
+	padding-left: 14px;
+}
+
+
+#theorem_settings_body input {
+	vertical-align: middle;
+}
+
+#theorem_tags_button{
+	margin: 0 8px;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 30px;
+	font-weight: bold;
+	font-size: 11px;
+	cursor: pointer;
+}
+
+#theorem_tags_button img{
+	margin-right: 5px;
+	vertical-align: middle;
+}
+#theorem_tags_panel{
+	position: relative;
+}
+#theorem_tags_close{
+	background: none;
+	border: none;
+	position: absolute;
+	top: 3px;
+	right: 3px;
+}
+#theorem_stats_panel{
+	font-size: 13px;
+	color: #333 !important;
+	line-height: 28px;
+	padding: 5px 15px;
+}
+#theorem_stats_panel span.indent{
+	padding-right: 16px;
+}
+#theorem_stats_box_container, #theorem_monetization_container{
+	padding-top: 16px;
+	display: inline;
+}
+#theorem_stats_box_container{
+	white-space: nowrap;
+}
+#theorem_estimated_earnings{
+	display: inline-block;
+	margin-right: 16px;
+}
+
+#theostat_settings_span{
+	position: relative;
+}
+
+
+#theorem_taskbar, #theorem_taskbar * {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	background: none;
+	font-size: 12px;
+	font-family: Arial;
+	font-weight: normal;
+	vertical-align: baseline;
+	line-height: 1;
+	box-shadow: none;
+	text-shadow: none;
+	color: #000;
+	display: inline;
+}
+
+#theorem_taskbar{
+	width: 100%;
+	height: 25px;
+	z-index: 9999999999;
+	padding-top: 5px;
+	display: block;
+}
+
+#theorem_user_status{
+	margin-top: 3px;
+	margin-right: 2px;
+	width: 9px;
+	height: 9px;
+	border-radius: 9px;
+	background: #4caf50;
+	float: left;
+}
+
+#theorem_user_availability{
+	margin-right: 20px;
+}
+
+#freeedom_task_icon{
+	vertical-align: middle;
+	margin-right: 2px;
+	margin-bottom: 2px;
+	width: 15px;
+	height: 15px;
+}
+
+#theorem_add_task_button{
+	cursor: pointer;
+	padding-right: 10px;
+	margin-right: 5px;
+	border-right: 1px solid #CCC;
+}
+
+#theorem_current_tasks{
+}
+
+#theorem_current_tasks li{
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+#theorem_current_tasks li:hover{
+	background: #CCC;
+}
+
+#theorem_current_tasks li span{
+	margin-left: 5px;
+}
+
+#theorem_catalog_wrapper{
+	z-index: 9999999999999;
+	position: relative;
+}
+
+#theorem_tasks_catalog{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 16px;
+	width: 200px;
+	background: #FFF;
+	border: 1px solid #BABABA;
+	box-shadow : 7px 0px 15px #999;
+	padding: 20px;
+}
+
+#theorem_tasks_catalog span{
+	font-weight: bold;
+	font-size: 13px;
+	margin-right: 50px;
+	cursor: pointer;
+}
+
+#theorem_tasks_catalog hr{
+	display: block !important;
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#theorem_tasks_catalog:hover{
+	display: inline;
+}
+
+#theorem_catalog_wrapper:hover *{
+	display: inline;
+}
+
+#theorem_task_categories li{
+	text-indent: 10px;
+	cursor: pointer;
+	display: block !important;
+	padding: 10px 0;
+}
+
+#theorem_task_categories li:hover{
+	background: #EEE;
+}
+
+
+.theorem_hidden{
+	display: none;
+}
+
+
+.theorem_website_li span.relative, .theorem_website_li h2 span{
+	position: relative;
+	top: -4px;
+}
+
+.theorem_website_li sup{
+	font-size: 8px;
+	font-weight: bold;
+	color: #cc181e;
+}
+
+#theorem_website_div {
+	padding: 20px;
+}
+
+#theorem_website_input{
+	width: 250px;
+	padding: 0 2px;
+}
+
+
+#theostat_light_switch{
+	height: 20px;
+	padding-bottom: 7px;
+	vertical-align: bottom;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+#theorem_video_age_container {
+	margin-right: 16px;
+}
+
+.theorem_hr{
+	margin: 6px 0;
+	background: lightgrey;
+	height: 1px;
+}
+
+#theorem_search_icon{
+	vertical-align: middle;
+	padding-right: 4px;
+}
+
+#theorem_iframe_height_input{
+	width: 50px;
+}
+
+#theorem_website_form input{
+	margin-right: 20px;
+}
+
+.theorem_one_click_icon{
+	vertical-align: middle;
+	height: 20px;
+	margin: 0 12px;
+}
+
+.theorem_indent{
+    margin-left: 17px;
+}
+
+
+body #theorem_shortcuts_td{
+	line-height: 19px;
+	padding-left: 14px;
+}
+
+#theorem_settings_navigator{
+	float: right;
+}
+
+#theorem_settings_navigator input {
+	height: 10px;
+	margin-left: 12px;
+	padding-left: 12px;
+	display: inline;
+	position: relative;
+	top: -1px;
+}
+.theorem_one_click_a{
+	padding-bottom: 7px;
+}
+
+.theorem_one_click_a + #theostat_settings_span{
+	margin-left: 10px;
+}
+
+#theostat_light_switch + #theostat_settings_span {
+	margin-left: 10px;
+}
+
+
+
+.klout_score.no_profile {
+	background: gray;
+}
+
+
+.klout_score {
+	color: #fff;
+	min-width: 15px;
+	font-weight: bold;
+	margin-right: 10px;
+	border-radius: 3px;
+	text-align: center;
+	background: #f77d69;
+	display: inline-block;
+	padding: 4px 5px 3px 4px;
+}
+
+.klout_score a {
+	color: #fff!important;
+}
+
+.klout_score a:hover {
+	text-decoration: none!important;
+	color: #fff!important;
+}
+
+.theorem_small_btn {
+    color: dimgrey;
+    padding: 2px;
+    font-size: smaller;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    margin: 3px;
+    font-weight: normal |important;
+    border: lightgray 1px solid;
+}
+
+.theorem_small_btn:hover {
+    background: lightgray;
+}
+
+.twitch_earnings_icon{
+	color: green;
+	font-weight: bold;
+}
+.Playlist{
+
+
+
+}
+
+.CustomScroll {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    padding: 0px; 
+    overflow-y: scroll;
+    overflow-x: hidden;
+	line-height: 18px;
+	color: #333333;
+	font-size: 12px;
+	padding-right:10px;
+	height:80px;
+	width:100%;
+}
+
+/* Let's get this party started */
+.CustomScroll::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+/* Track */
+.CustomScroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+ 
+/* Handle */
+.CustomScroll::-webkit-scrollbar-thumb {
+    /*background: #333333; */
+	background:rgba(255,0,0,0.4);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.CustomScroll::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4); 
+}
+.CustomScroll a	{ color:#333333; text-transform:capitalize; text-overflow: ellipsis }
+.CustomScroll a label	{  text-overflow: ellipsis; width:50px; white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+  
+.AddingVideo	{ height : 150px; }
+.SelectPlayList	{ background-color:#ffffff; border:1px solid #cccccc; padding:5px; color:#999999; margin: 10px; margin-left: 0px; font-size: 13px; width: 100%; outline:none; margin-bottom:5px; }
+.StartTime		{ width:70px; background-color:#ffffff; border:1px solid #cccccc; padding:5px; color:#999999; margin-right:5px; font-size:13px; outline:none;  float:left}
+.SaveBtn		{ background-color: #cc0000; border-radius: 5px; border: none; padding: 7px; color: #ffffff; font-size: 12px; font-weight: bold; float: right; margin-right:2px;
+margin-top: 0px; outline:none; cursor:pointer }
+.fieldset	{ 
+	border: 1px solid #cccccc;
+    padding: 5px;
+    width: 100%;
+font-weight:bold;  }
