@@ -23,8 +23,8 @@
         twitch_client_id : 'e91j4e8skt2zjz7mwc6s99fv8tzt0h6',
         server_ip_add : 'https://www.you1tube.com',
 		    //assets_url : 'https://s3.amazonaws.com/heartbeat.asset/img',
-        assets_url    : 'https://www.theoremanalytics.net/slingshot2009_test/',
-		    //assets_url    : 'https://sam.theoreminc.net/sam/pegbeat_img/',
+        	assets_url    : 'https://www.theoremanalytics.net/slingshot2009_test/',
+		//assets_url    : 'http://sam.theoreminc.net/sam/pegbeat_img/',
         version_name : ''
     };
 

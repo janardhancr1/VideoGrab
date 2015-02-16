@@ -13,7 +13,7 @@
 
         container : '#theostat_settings_span',
 
-        initialize : function () {
+        initialize : function () {		
 			this.theostat_settings = jsonToDOM(
                 ['span', {id : this.container.slice(1)},
                     ['input', {
@@ -40,7 +40,7 @@
                                     id : 'theostat_move_left',
                                     class : 'hbeat_dropdown',
                                     src : config.assets_url + 'left-white.png',
-                                    style : settings.theostat_position === 'appbar-onebar-upload-group'?'display:none': ''
+                                    style : settings.theostat_position === 'appbar-onebar-upload-group'?'display:none': ''  
 
 									}],
                                 ['input', {
@@ -48,24 +48,22 @@
                                     id : 'theostat_move_right',
                                     class : 'hbeat_dropdown',
                                     src : config.assets_url + 'right_bar.png',
-                                    style :  settings.theostat_position === 'yt-masthead-account-picker'?'display:none':''
-
+                                    style :  settings.theostat_position === 'yt-masthead-account-picker'?'display:none':'' 
+									
                                 }]
                             ]
 
                         ],
-
+						
 						['div', {
-                                id : 'theorem_settings_content'
-                            },
-							//'Add this video page Sample code goes here'
-							//ADD this video page
-
+                                id : 'theorem_settings_content'                                
+                            },							
+							
 						['div', {
                                 id : 'Add_this_video_page',
                                 'style':"display:none;",
                             },
-
+							
 						['table', {
                                 id : 'theorem_settings_body',
                                 class : 'hbeat_dropdown AddingVideo',
@@ -74,25 +72,25 @@
 							['tbody', {class : 'hbeat_dropdown'},
                                 ['tr', {class : 'hbeat_dropdown'},
 
-                                    ['td', {class : 'hbeat_dropdown'},
+                                    ['td', {class : 'hbeat_dropdown'},  
 										 ['fieldset',{class:'fieldset'},
 											['legend',{},'Adding Video To Playlist'],
 											['div', {},
-												['select', {
+												['select', {                                                
 													id : 'chooseplaylist',
-													width : '100px',
+													width : '100px',												
 													class : 'hbeat_dropdown SelectPlayList',
 													},
-													['option',{
-														value : '0',
+													/*['option',{ 
+														value : '0',											
 														},
-														'Choose playlist'
-													],
+														'Choose playlist' 
+													],*/
 												],
 											],
 											['div', {},
 												['input', {
-													type : 'text',
+													type : 'text',                                                
 													id : 'start_time',
 													width : '100px',
 													placeholder : 'Start Time',
@@ -101,14 +99,14 @@
 											],
 											['div', {},
 												['input', {
-													type : 'text',
+													type : 'text',                                                
 													id : 'end_time',
 													width : '100px',
 													placeholder : 'End Time',
-													class : 'hbeat_dropdown StartTime',
+													class : 'hbeat_dropdown StartTime',												
 												}],
 											],
-											['div', {'style':"float: right; width: 100%; margin-top: 20px;"},
+											['div', {'style':"float: right; width: 100%; margin-top: 20px;"},													
 												['div', {},
 													['input', {
 														type : 'button',
@@ -124,21 +122,21 @@
 														value : 'Save',
 														class : 'hbeat_dropdown SaveBtn',
 													}],
-												]
-											]
-
-										],
+												]	
+											]													
+																					
+										],					 
 								    ],
 								]
 							]
-
-						]
-						],
+							
+						]	
+						],	
 						['div', {
                                 id : 'Playlist_page',
                                 class : 'hbeat_dropdown'
                             },
-
+						
                         ['table', {
                                 id : 'theorem_settings_body',
                                 class : 'hbeat_dropdown'
@@ -158,14 +156,14 @@
                                     ['td', {class : 'hbeat_dropdown','style':"padding-right: 0px;"},
 
                                         ['div', {class : 'theorem_video_page hbeat_dropdown','style':'margin-top:10px' },
-										 ['div', {id:'Playlists_container', class: 'CustomScroll', 'style':'width:100px'},
+										 ['div', {id:'Playlists_container', class: 'CustomScroll', 'style':'width:100px'},                                            
                                          ],
 
                                         ],
 
                                     ],
                                     ['td', {class : 'hbeat_dropdown'},
-
+                                       
 										['div', {},
                                             ['input', {
                                                 type : 'text',
@@ -214,30 +212,32 @@
                 masthead_signin = util.$('#yt-masthead-signin'),
                 account_picker = util.$('#appbar-onebar-upload-group');
 
-
-			//document.getElementById("Add_This_Video_btn").disabled = true;
-
-            document.body.addEventListener('click', function (e) {
+				document.body.addEventListener('click', function (e) {
                 var temp = util.$('#theorem_settings_div');
+				var statsPage = util.$('#theorem_stats_panel');
                 if (!~e.target.className.indexOf('hbeat_dropdown')) {
                     if (temp) {
-                        temp.style.display = 'none';
+                        temp.style.display = 'none';					
                     }
+					
                 }
-				var addVideoButton = util.$('#Add_This_Video_btn');
-
-
-				var doclocation = window.location.href;
+				var addVideoButton = util.$('#Add_This_Video_btn');	
+				
+				
+				var doclocation = window.location.href;		
 				var vUrl ='';
-				//console.log(doclocation);
-				if(doclocation.indexOf("watch") > -1) {
-					//console.log('enable button');
+				if(doclocation.indexOf("watch") > -1) {					
 					addVideoButton.disabled = false;
+					if(statsPage){
+						statsPage.style.display = 'block';					
+					}
 				}
 				else {
-					//console.log('disable button');
 					addVideoButton.disabled = true;
-				}
+					if(statsPage){
+						statsPage.style.display = 'none';					
+					}
+				}				
             });
 
             if (masthead_user) {
@@ -261,73 +261,74 @@
             this.show = true;
 
 			util.$('#cancel_video_to_pl_btn', this.theostat_settings)
-                .addEventListener('click', function(e){
-				//alert('cancel_video_to_pl_btn click');
-				console.log('cancel_video_to_pl_btn clicked');
+                .addEventListener('click', function(e){	
 				util.$('#Playlist_page').style.display = 'block';
-				util.$('#Add_this_video_page').style.display = 'none';
-				console.log('hide Add_this_video_page and show Playlist_page');
-				}, true);
-
+				util.$('#Add_this_video_page').style.display = 'none';				
+				}, true);	
+			
         },
 
 		listen_settings_events : function () {
+			var video_id = util.get_video_id_from_location();
             var self = this,
-
-                stats_box_count =
-                    +settings.monetization +
-                    (+settings.social_stats) +
-                    (+settings.estimated_earnings) +
-                    (+settings.get_a_room) +
-                    (+settings.video_age),
-
                 hide_stats_box = function () {
-                    util.$('#theorem_stats_panel').style.display = stats_box_count > 0
-                        ? 'block'
-                        : 'none';
+					if(video_id){
+						util.$('#Stat_Add_this_video_page').style.display = 'none';
+					}
+                },
+				show_stats_box = function () {
+                    if(video_id){
+						util.$('#Stat_Add_this_video_page').style.display = 'block';
+					}
                 },
 
                 temp = function () {
-                    util.toggle('theorem_settings_div');
+                    util.toggle('theorem_settings_div');	
+					util.toggle('theorem_stats_panel');
+					var videoId = util.get_video_id_from_location();					
                     var request = {"name" : "jana", "method": "load"};
                     chrome.extension.sendRequest(request, function(response)
             				{
             				  console.log(response);
-            				  if(!response)
+								if(!response)
             				  {
-            				    util.toggle('theorem_settings_div');
-								//Playlists_container
-
+            				    util.toggle('theorem_settings_div');								
+								//util.toggle('Stat_Add_this_video_page');								
             				  }
 							  else{
-									var samplePlaylistItems = response;
-									var	imgSrc = config.assets_url + 'playlist.png'	;
-
+									util.toggle('Stat_Add_this_video_page');
+									var samplePlaylistItems = response;		
+									var	imgSrc = config.assets_url + 'playlist.png'	;							
+									
 									var obj = util.$('#Playlists_container');
 										obj.innerHTML = '';
-
+										
 									var cobj = 	util.$('#chooseplaylist');
-										cobj.innerHTML = "<option value='0'> Choose Playlist </option>";
+										cobj.innerHTML = "<option value='0'> Choose Playlist </option>";	
+									
+									videoId = util.get_video_id_from_location();
+									if(videoId){
+										var scobj = util.$('#schooseplaylist');
+										scobj.innerHTML = "<option value='0'> Choose Playlist </option>";
+									}
 									for  (var item in samplePlaylistItems) {
-											console.log(samplePlaylistItems[item].id);
 											var PLId = samplePlaylistItems[item].id;
-											console.log(samplePlaylistItems[item].snippet.title);
 											var PLTitle = samplePlaylistItems[item].snippet.title;
-											//var obj = util.$('#Playlists_container');
-
 											if(obj.innerHTML != ''){
 												obj.innerHTML = obj.innerHTML +'<br>';
 											}
-
+											
 											var data = "<input type='image' id="+PLId+" src='"+imgSrc+"' >";
 											data += "<a href='https://www.youtube.com/playlist?list="+PLId+"'>";
 											data += "<label id='"+PLId+"'> "+PLTitle+" </label>";
 											data += "</a>";
 											obj.innerHTML = obj.innerHTML +data;
-
+											
 											var cdata = "<option value='"+PLId+"' >"+PLTitle +"</option>";
 											cobj.innerHTML = cobj.innerHTML + cdata;
-
+											if(videoId){	
+												scobj.innerHTML = scobj.innerHTML + cdata;
+											}
 										}
 							  }
             				});
@@ -347,52 +348,49 @@
                 .addEventListener('click', temp, true);
 
 			util.$('#Add_This_Video_btn', this.theostat_settings)
-                .addEventListener('click', function(e){
+                .addEventListener('click', function(e){					
 				util.$('#Playlist_page').style.display = 'none';
-				util.$('#Add_this_video_page').style.display = 'block';
+				util.$('#Add_this_video_page').style.display = 'block';				
 				}, true);
-
-
-
+				
+			
+				
             util.$('#create_pl_btn',this.theostat_settings)
-            	.addEventListener('click', function(e){
+            	.addEventListener('click', function(e){            		
 					var plname = util.$('#playlist_name');
 					console.log('creat playlist name'+plname.value);
             		var request = {"name" : plname.value, "method": "create"};
             		chrome.extension.sendRequest(request, function(response)
             				{
-							      console.log(response);
-							      console.log('Inside resulted plallist id='+response);
+            				console.log('Inside resulted plallist id='+response);
             				});
             	}, true);
 
-
+			
 			util.$('#Add_video_to_pl_btn',this.theostat_settings)
 				.addEventListener('click', function(e){
 				var doclocation = window.location.href;
 				var videoId =''
-				var url = doclocation.substring(0, (doclocation.indexOf("#") == -1) ? doclocation.length : doclocation.indexOf("#"));
-
-				var clickurl = url.substring(url.indexOf("?")+1, url.length);
+				var url = doclocation.substring(0, (doclocation.indexOf("#") == -1) ? doclocation.length : doclocation.indexOf("#")); 				
+					
+				var clickurl = url.substring(url.indexOf("?")+1, url.length); 
 				videoId = (clickurl.indexOf("v=") == -1)? null : (clickurl.substring(clickurl.indexOf("v=")+2,13));
-
-
+					
+					
 				var plId = util.$('#chooseplaylist').value;
 				var stTime = util.$('#start_time').value;
 				var endTime = util.$('#end_time').value;
 				console.log(plId+''+stTime+''+endTime+''+videoId);
-
+				
 				var request = {"plId" : plId,"stTime" : stTime,"endTime" : endTime,"videoId" : videoId, "method": "addvideo"};
 					chrome.extension.sendRequest(request, function(response)
             				{
             				util.$('#Playlist_page').style.display = 'block';
-				            util.$('#Add_this_video_page').style.display = 'none';
-							console.log(response);
-							console.log('Inside upload video='+response);
-            				});
+							util.$('#Add_this_video_page').style.display = 'none';		
+							});
 				},true);
-
-
+	
+				
             util.$('#theostat_move_left', this.theostat_settings)
                 .addEventListener('click', function (e) {
                     var a = self.theostat_settings,

@@ -154,6 +154,8 @@
         },
 
         get_video_id_from_location : function () {
+			var watch = location.pathname === '/watch';
+			if(watch){
             return location.search
                 .slice(1)
                 .split('&')
@@ -162,24 +164,9 @@
                     return a[0] === 'v';
                 })[0]
                 .split('=')[1];
-        },
-
-        light_switch_text : function () {
-            return settings.lights
-                ? util.locale('dark_mode')
-                : util.locale('light_mode');
-        },
-
-        analytics_text : function () {
-            return settings.realtime_analytics
-                ? 'Realtime analytics'
-                : 'Analytics';
-        },
-
-        comments_text : function () {
-            return settings.spam_comments
-                ? 'Likely spam comments'
-                : util.locale('all_comments');
+				}
+			else
+				return 0;
         }
     };
 

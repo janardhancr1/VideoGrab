@@ -20,13 +20,14 @@
                 "scripts/lib/fermata.js",
                 "scripts/helpers/utilities.js",
                 "scripts/widgets/loadUI.js",
+				"scripts/widgets/statUI.js",
                 "scripts/preload.js"],
       "matches": [ "*://*/*" ],
       "run_at": "document_start"
    } ],
    "oauth2": {
-      "client_id": "872339729949-137jrria0afggt1oevr0ofi5ub7pkn88.apps.googleusercontent.com",
-	    //"client_id": "1072936636632-73q1pt0lrdn5f0iqtfeljv1ffbean8r6.apps.googleusercontent.com",
+      //"client_id": "872339729949-137jrria0afggt1oevr0ofi5ub7pkn88.apps.googleusercontent.com",
+	  "client_id": "1072936636632-73q1pt0lrdn5f0iqtfeljv1ffbean8r6.apps.googleusercontent.com",
       "scopes": [ "https://www.googleapis.com/auth/youtubepartner",
                   "https://www.googleapis.com/auth/youtube",
                   "https://www.googleapis.com/auth/youtube.upload",

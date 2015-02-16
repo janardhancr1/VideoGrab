@@ -20,22 +20,22 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 					response = LoadPlaylist();
 				break;
 				case "create":
-					response = CreatePlayList(request.name);
-				break;
+					response = CreatePlayList(request.name);					
+				break;  
 				case "addvideo":
 					console.log(request.plId+','+request.stTime+','+request.endTime+','+request.videoId);
-					response = UploadVideoToPlayList(request.plId,request.stTime,request.endTime,request.videoId);
-				break;
+					response = UploadVideoToPlayList(request.plId,request.stTime,request.endTime,request.videoId);			
+				break; 
 			}
-
+			
 	    }
 	    else
 	    {
 	      console.log("Not Authenticated");
 	      response = handleAuthResult();
 	    }
-
-	console.log('Call back : '+response);
+	   	
+	console.log('Call back : '+response);	
 	sendResponse(response);
 });
 
@@ -43,7 +43,7 @@ function CreatePlayList(plname)
 {
 console.log('CreatePlayList'+plname);
 
-    gapi.client.load('youtube', 'v3', function() {
+    gapi.client.load('youtube', 'v3', function() {	
 			var crequest = gapi.client.youtube.playlists.insert({
 			part: 'snippet,status',
 			resource: {
@@ -61,10 +61,10 @@ console.log('CreatePlayList'+plname);
 			console.log(result);
 			if (result) {
 			  playListId = result.id;
-			 } else {
+			 } else {     
 			  playListId = 0;
-			}
-		  });
+			}	
+		  });	
 	});
 	console.log('created playlist ID'+playListId);
 	return playListId;
@@ -72,7 +72,7 @@ console.log('CreatePlayList'+plname);
 
 function LoadPlaylist()
 {
-    gapi.client.load('youtube', 'v3', function() {
+    gapi.client.load('youtube', 'v3', function() {     
       var request = gapi.client.youtube.channels.list({
         mine: true,
         part: 'contentDetails'
@@ -86,7 +86,7 @@ function LoadPlaylist()
 				maxResults: 50,
     			//filter: 'items(id)' // This gets what you only need, the playlist Id
     	});
-    	prequest.execute(function(response) {
+    	prequest.execute(function(response) {    	  
         playLists = response.result.items;
     	console.log(playLists);
         });
@@ -107,21 +107,21 @@ function UploadVideoToPlayList(plId,startPos,endPos,videoId){
 	  }
 	  if (endPos != undefined) {
 		details['endAt'] = endPos;
-	  }
-	  var strAt = (startPos.indexOf(".") == -1)?'PT'+startPos+'M00S' :
+	  }	  
+	  var strAt = (startPos.indexOf(".") == -1)?'PT'+startPos+'M00S' : 
 	  'PT'+startPos.substring(0,startPos.indexOf("."))+'M'+startPos.substring(startPos.indexOf(".")+1,startPos.length)+'S';
-
-	  var endAt = (endPos.indexOf(".") == -1)?'PT'+endPos+'M00S' :
+	   
+	  var endAt = (endPos.indexOf(".") == -1)?'PT'+endPos+'M00S' : 
 	  'PT'+endPos.substring(0,endPos.indexOf("."))+'M'+endPos.substring(endPos.indexOf(".")+1,endPos.length)+'S';
-
-	  gapi.client.load('youtube', 'v3', function() {
+	  
+	  gapi.client.load('youtube', 'v3', function() {	
 		   var urequest = gapi.client.youtube.playlistItems.insert({
 			part: 'snippet,contentDetails',
 			resource: {
 			contentDetails:{
 						startAt:strAt,
 						endAt:endAt,
-					},
+					},				
 			  snippet: {
 				playlistId: plId,
 				resourceId: {
@@ -134,9 +134,9 @@ function UploadVideoToPlayList(plId,startPos,endPos,videoId){
 		  urequest.execute(function(response) {
 		  console.log(response);
 			//$('#status').html('<pre>' + JSON.stringify(response.result) + '</pre>');
-		  });
-
-	   });
+		  });  
+	   
+	   }); 
 
 }
 
@@ -145,8 +145,8 @@ function UploadVideoToPlayList(plId,startPos,endPos,videoId){
 // at https://console.developers.google.com/.
 // If you run this code from a server other than http://localhost,
 // you need to register your own client ID.
-var OAUTH2_CLIENT_ID = '872339729949-137jrria0afggt1oevr0ofi5ub7pkn88.apps.googleusercontent.com';
-//var OAUTH2_CLIENT_ID ='1072936636632-73q1pt0lrdn5f0iqtfeljv1ffbean8r6.apps.googleusercontent.com';
+//var OAUTH2_CLIENT_ID = '872339729949-137jrria0afggt1oevr0ofi5ub7pkn88.apps.googleusercontent.com';
+var OAUTH2_CLIENT_ID ='1072936636632-73q1pt0lrdn5f0iqtfeljv1ffbean8r6.apps.googleusercontent.com';
 var OAUTH2_SCOPES = [
     "https://www.googleapis.com/auth/youtubepartner",
     "https://www.googleapis.com/auth/youtube",
@@ -178,7 +178,6 @@ function checkAuth() {
 function handleAuthResult(authResult) {
   if (authResult && !authResult.error) {
     authenticated = true;
-    console.log(gapi.auth.getToken());
     return authenticated;
   } else {
     console.log("not authenticated")
